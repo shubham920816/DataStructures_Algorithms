@@ -4,7 +4,7 @@ class PeakFinder(object):
         """
 
         Args:
-            input:
+            input_val :
         """
         self.input = input_val
 
