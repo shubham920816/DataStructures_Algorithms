@@ -1,12 +1,12 @@
 class PeakFinder(object):
 
-    def __init__(self, input=[]):
+    def __init__(self, input_val=[]):
         """
 
         Args:
             input:
         """
-        self.input = input
+        self.input = input_val
 
     def _logic(self, array=[]):
         n = len(array)
