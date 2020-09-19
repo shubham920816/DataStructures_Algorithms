@@ -1,9 +1,11 @@
-import os
-
-
-class Peak_finder(object):
+class PeakFinder(object):
 
     def __init__(self, input=[]):
+        """
+
+        Args:
+            input:
+        """
         self.input = input
 
     def _logic(self, array=[]):
@@ -11,15 +13,15 @@ class Peak_finder(object):
         mid = int(n / 2)
         for i in range(0, n):
             if n > 2:
-                if (array[mid] >= array[(mid) + 1]) and (array[mid] >= array[(mid) - 1]):
+                if (array[mid] >= array[mid + 1]) and (array[mid] >= array[(mid) - 1]):
                     value = array[mid]
                     return value
 
-                elif array[(mid) - 1] >= array[(mid)]:
-                    temp_array = array[:(mid)]
+                elif array[mid - 1] >= array[mid]:
+                    temp_array = array[:mid]
                     return self._logic(temp_array)
-                elif array[(mid) + 1] >= array[mid]:
-                    temp_array = array[(mid):]
+                elif array[mid + 1] >= array[mid]:
+                    temp_array = array[mid:]
                     return self._logic(temp_array)
             elif n == 1:
                 value = array[mid]
@@ -30,12 +32,18 @@ class Peak_finder(object):
                 else:
                     return array[mid - 1]
 
-    def runpeakfinder(self):
-        val = self._logic(self.input)
-        return (val)
+    def run_peak_finder(self):
+        """
+
+        Returns:
+
+        """
+        value = self._logic(self.input)
+        return (value)
 
 
 if __name__ == "__main__":
-    l = [1, 5, 35, 7, 8, 15, 20, 25, 30]
-    t1 = Peak_finder(input=l)
-    print(t1.runpeakfinder())
+
+    val = [1, 5, 35, 7, 8, 15, 20, 25, 30]
+    t1 = PeakFinder(input=val)
+    print(t1.run_peak_finder())
