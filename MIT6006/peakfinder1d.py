@@ -9,14 +9,6 @@ class PeakFinder(object):
         self.input = input_val
 
     def _logic(self, array=[]):
-        """
-
-        Args:
-            array:
-
-        Returns:
-
-        """
         n = len(array)
         mid = int(n / 2)
 
