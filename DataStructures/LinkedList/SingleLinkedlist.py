@@ -32,6 +32,7 @@ class LinkedList(object):
 
     def insert_at_head(self, node):
         """
+        Brute Force Approach
         Args:
             node:
 
@@ -44,7 +45,7 @@ class LinkedList(object):
 
     def insert_at_tail(self, node):
         """
-
+        Brute Force Approach
         Args:
             node:
 
@@ -59,30 +60,18 @@ class LinkedList(object):
                 val.next = node
                 break
 
-    def insert_at_position(self, position, node):
+    def insert_node_at_position_opt(self, prev_node, node):
         """
 
         Args:
-            position:
+            prev_node:
             node:
 
         Returns:
 
         """
-        i = 0
-        temp = self.head
-        while temp:
-
-            if i == position - 1:
-                val = temp.next
-                temp.next = node
-                temp = temp.next
-                temp.next = val
-                i = i+1
-
-            else:
-                i += 1
-                temp = temp.next
+        node.next = prev_node.next
+        prev_node.next = node
 
 
 if __name__ == "__main__":
@@ -105,7 +94,7 @@ if __name__ == "__main__":
     single_list.print_list()
     print("##########")
     sixth = Node(1234)
-    single_list.insert_at_position(2, sixth)
+    single_list.insert_node_at_position_opt(fourth, sixth)
     single_list.print_list()
     print("##########")
 
