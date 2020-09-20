@@ -70,6 +70,7 @@ class LinkedList(object):
         Returns:
 
         """
+
         node.next = prev_node.next
         prev_node.next = node
 
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     single_list.print_list()
     print("##########")
     sixth = Node(1234)
-    single_list.insert_node_at_position_opt(fourth, sixth)
+    single_list.insert_node_at_position_opt(fifth, sixth)
     single_list.print_list()
     print("##########")
 
